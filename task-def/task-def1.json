@@ -1,0 +1,18 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "dsylvester-random-person-temp",
+      "image": "dsylvester/random-person-temp:latest",
+      "portMappings": {
+        "containerPort": 3000,
+        "hostPort": 3000        
+      },
+      "essential": true
+    }
+  ],
+  "requires_compatibilities": ["FARGATE"],
+  "family": "random-person-temp",
+  "networkMode": "awsvpc",
+  "cpu": 512,
+  "memory": 1024  
+}
