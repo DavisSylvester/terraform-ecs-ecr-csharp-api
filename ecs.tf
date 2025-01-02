@@ -33,11 +33,11 @@ resource "aws_ecs_service" "random_profile_api" {
   #   depends_on      = [aws_iam_role_policy.random_profile_api]
 
 
-#   load_balancer {
-#     target_group_arn = aws_lb_target_group.ecs_tg.arn
-#     container_name   = "api"
-#     container_port   = 3000
-#   }
+  load_balancer {
+    target_group_arn = aws_lb_target_group.ecs_tg.arn
+    container_name   = "api"
+    container_port   = 3000
+  }
 
   network_configuration {
     subnets = [ aws_subnet.main.id ]
